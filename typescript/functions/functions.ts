@@ -46,21 +46,15 @@ export function translateToEnglish(braille: string): string {
     } else if (char === brailleMap["num"]) {
       isNumber = true;
     } else {
-      let translatedChar =
-        englishMap.letters[char] || englishMap.numbers[char] || "";
+      let translatedChar = "";
 
       if (isNumber) {
-        // Handle number translation
-        if (translatedChar >= "a" && translatedChar <= "j") {
-          translatedChar = (
-            translatedChar.charCodeAt(0) -
-            "a".charCodeAt(0) +
-            "1".charCodeAt(0)
-          ).toString();
-        } else if (translatedChar === "k") {
-          translatedChar = "0";
+        translatedChar = englishMap.numbers[char] || "";
+        if (translatedChar === "") {
+          translatedChar = "?";
         }
-        isNumber = false;
+      } else {
+        translatedChar = englishMap.letters[char] || "";
       }
 
       if (isCapital) {
@@ -69,6 +63,10 @@ export function translateToEnglish(braille: string): string {
       }
 
       englishText += translatedChar;
+
+      if (!isNumber) {
+        isNumber = false;
+      }
     }
   }
 
