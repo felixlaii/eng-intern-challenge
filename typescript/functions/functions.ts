@@ -37,16 +37,17 @@ export function translateToEnglish(braille: string): string {
   const brailleChars = braille.match(/.{1,6}/g) || [];
 
   for (const char of brailleChars) {
-    if (char === brailleMap[" "]) {
+    if (char === brailleMap.letters[" "]) {
       englishText += " ";
       isCapital = false;
       isNumber = false;
-    } else if (char === brailleMap["cap"]) {
+    } else if (char === brailleMap.letters["cap"]) {
       isCapital = true;
-    } else if (char === brailleMap["num"]) {
+    } else if (char === brailleMap.numbers["num"]) {
       isNumber = true;
     } else {
-      let translatedChar = englishMap[char] || "";
+      let translatedChar =
+        brailleMap.letters[char] || brailleMap.numbers[char] || "";
 
       if (isNumber) {
         if (translatedChar >= "a" && translatedChar <= "j") {
@@ -57,7 +58,6 @@ export function translateToEnglish(braille: string): string {
           ).toString();
         } else if (translatedChar === "k") {
           translatedChar = "0";
-        } else {
         }
         isNumber = false;
       }
@@ -66,7 +66,6 @@ export function translateToEnglish(braille: string): string {
         translatedChar = translatedChar.toUpperCase();
         isCapital = false;
       }
-
       englishText += translatedChar;
     }
   }
