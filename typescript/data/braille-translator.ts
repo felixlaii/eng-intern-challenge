@@ -42,3 +42,5 @@ export const brailleNumbers: { [key: string]: string } = {
   "9": brailleMap["i"],
   "0": brailleMap["j"],
 };
+
+export const englishMap: { [key: string]: string } = {};
