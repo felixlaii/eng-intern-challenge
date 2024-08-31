@@ -8,3 +8,5 @@ if (args.length < 2) {
 }
 
 const [command, text] = args;
+
+let result: string;
