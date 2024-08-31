@@ -30,4 +30,15 @@ export const brailleMap: { [key: string]: string } = {
   " ": "......",
 };
 
-export const brailleNumbers: { [key: string]: string } = {};
+export const brailleNumbers: { [key: string]: string } = {
+  "1": brailleMap["a"],
+  "2": brailleMap["b"],
+  "3": brailleMap["c"],
+  "4": brailleMap["d"],
+  "5": brailleMap["e"],
+  "6": brailleMap["f"],
+  "7": brailleMap["g"],
+  "8": brailleMap["h"],
+  "9": brailleMap["i"],
+  "0": brailleMap["j"],
+};
