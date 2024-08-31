@@ -4,11 +4,13 @@ import {
   englishMap,
 } from "../data/braille-translator";
 
-export interface translateToBrailleProps {
-  text: string;
-}
-
-export function translateToBraille(props: translateToBrailleProps): any {
+export function translateToBraille(text: string): any {
   let brailleText = "";
   let isNumber = false;
+
+  for (const char of text) {
+    if (char === " ") {
+      brailleText += brailleMap[" "];
+    }
+  }
 }
