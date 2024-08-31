@@ -54,4 +54,6 @@ export function translateToEnglish(braille: string): any {
       englishText += translatedChar;
     }
   }
+
+  return englishText;
 }
