@@ -41,6 +41,8 @@ export function translateToEnglish(braille: string): any {
       englishText += "";
       isCapital = false;
       isNumber = false;
+    } else if (char === brailleMap["cap"]) {
+      isCapital = true;
     }
   }
 }
