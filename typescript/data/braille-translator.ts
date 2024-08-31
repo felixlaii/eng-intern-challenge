@@ -44,3 +44,13 @@ export const brailleNumbers: { [key: string]: string } = {
 };
 
 export const englishMap: { [key: string]: string } = {};
+for (const key in brailleMap) {
+  if (brailleMap.hasOwnProperty(key)) {
+    englishMap[brailleMap[key]] = key;
+  }
+}
+for (const key in brailleNumbers) {
+  if (brailleNumbers.hasOwnProperty(key)) {
+    englishMap[brailleNumbers[key]] = key;
+  }
+}
