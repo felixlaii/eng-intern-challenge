@@ -15,6 +15,11 @@ export function translateToBraille(text: string): any {
     } else if (char >= "A" && char <= "Z") {
       brailleText += brailleMap["cap"] + brailleMap[char.toLowerCase()];
       isNumber = false;
+    } else if (char >= "0" && char <= "9") {
+      if (!isNumber) {
+        brailleText += brailleMap["num"];
+        isNumber = true;
+      }
     }
   }
 }
