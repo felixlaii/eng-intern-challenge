@@ -58,6 +58,10 @@ export function translateToEnglish(braille: string): any {
         }
         isNumber = false;
       }
+      if (isCapital) {
+        translatedChar = translatedChar.toUpperCase();
+        isCapital = false;
+      }
       englishText += translatedChar;
     }
   }
