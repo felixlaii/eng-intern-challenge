@@ -57,13 +57,16 @@ export function translateToEnglish(braille: string): string {
           ).toString();
         } else if (translatedChar === "k") {
           translatedChar = "0";
+        } else {
         }
         isNumber = false;
       }
+
       if (isCapital) {
         translatedChar = translatedChar.toUpperCase();
         isCapital = false;
       }
+
       englishText += translatedChar;
     }
   }
