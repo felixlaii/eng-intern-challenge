@@ -20,6 +20,10 @@ export function translateToBraille(text: string): any {
         brailleText += brailleMap["num"];
         isNumber = true;
       }
+      brailleText += brailleNumbers[char];
+    } else if (char >= "a" && char <= "z") {
+      brailleText += brailleMap[char];
+      isNumber = false;
     }
   }
 }
