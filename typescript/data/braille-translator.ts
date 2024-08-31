@@ -1,4 +1,4 @@
-export const brailleMap: { [key: string]: string } = {
+export const brailleMap: { [key: string]: any } = {
   a: "O.....",
   b: "O.O...",
   c: "OO....",
@@ -28,6 +28,16 @@ export const brailleMap: { [key: string]: string } = {
   cap: ".....O",
   num: ".O.OOO",
   " ": "......",
+  1: "O.....",
+  2: "O.O...",
+  3: "OO....",
+  4: "OO.O..",
+  5: "O..O..",
+  6: "OOO...",
+  7: "OOOO..",
+  8: "O.OO..",
+  9: ".OO...",
+  0: ".OOO..",
 };
 
 export const brailleNumbers: { [key: string]: string } = {

@@ -37,7 +37,7 @@ export function translateToEnglish(braille: string): any {
   const brailleChars = braille.match(/.{1,6}/g) || [];
 
   for (const char of brailleChars) {
-    if (char === brailleMap[""]) {
+    if (char === brailleMap[" "]) {
       englishText += " ";
       isCapital = false;
       isNumber = false;
@@ -53,8 +53,10 @@ export function translateToEnglish(braille: string): any {
           translatedChar = (
             translatedChar.charCodeAt(0) -
             "a".charCodeAt(0) +
-            "0".charCodeAt(0)
+            "1".charCodeAt(0)
           ).toString();
+        } else if (translatedChar === "k") {
+          translatedChar = "0";
         }
         isNumber = false;
       }
