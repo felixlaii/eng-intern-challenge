@@ -33,4 +33,6 @@ export function translateToEnglish(braille: string): any {
   let englishText = "";
   let isCapital = false;
   let isNumber = false;
+
+  const brailleChars = braille.match(/.{1,6}/g) || [];
 }
