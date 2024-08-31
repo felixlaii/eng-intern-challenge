@@ -70,7 +70,7 @@ export const englishMap = {
     "O..OOO": "z",
     ".....O": "cap",
     "......": " ",
-  },
+  } as { [key: string]: string },
   numbers: {
     ".O.OOO": "num",
     "O.....": "1",
@@ -83,7 +83,7 @@ export const englishMap = {
     "O.OO..": "8",
     ".OO...": "9",
     ".OOO..": "0",
-  },
+  } as { [key: string]: string },
 };
 
 export const brailleNumbers: { [key: string]: string } = {
