@@ -43,7 +43,12 @@ export const brailleNumbers: { [key: string]: string } = {
   "9": ".OO...",
 };
 
-export const englishMap = {
+type EnglishMap = { [key: string]: string };
+
+export const englishMap: {
+  letters: EnglishMap;
+  numbers: EnglishMap;
+} = {
   letters: {
     "O.....": "a",
     "O.O...": "b",

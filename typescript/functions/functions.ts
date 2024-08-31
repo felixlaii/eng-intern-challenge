@@ -1,4 +1,8 @@
-import { brailleMap, englishMap } from "../data/braille-translator";
+import {
+  brailleMap,
+  englishMap,
+  brailleNumbers,
+} from "../data/braille-translator";
 
 export function translateToBraille(text: string): string {
   let brailleText = "";
@@ -16,7 +20,7 @@ export function translateToBraille(text: string): string {
         brailleText += brailleMap["num"];
         isNumber = true;
       }
-      brailleText += brailleMap[char];
+      brailleText += brailleNumbers[char];
     } else if (char >= "a" && char <= "z") {
       brailleText += brailleMap[char];
       isNumber = false;
@@ -43,11 +47,10 @@ export function translateToEnglish(braille: string): string {
       isNumber = true;
     } else {
       let translatedChar =
-        englishMap.letters[char as keyof typeof englishMap.letters] ||
-        englishMap.numbers[char as keyof typeof englishMap.numbers] ||
-        "";
+        englishMap.letters[char] || englishMap.numbers[char] || "";
 
       if (isNumber) {
+        // Handle number translation
         if (translatedChar >= "a" && translatedChar <= "j") {
           translatedChar = (
             translatedChar.charCodeAt(0) -
@@ -64,6 +67,7 @@ export function translateToEnglish(braille: string): string {
         translatedChar = translatedChar.toUpperCase();
         isCapital = false;
       }
+
       englishText += translatedChar;
     }
   }
