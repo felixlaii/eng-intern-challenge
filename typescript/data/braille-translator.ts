@@ -1,4 +1,4 @@
-const brailleMap: { [key: string]: string } = {
+export const brailleMap: { [key: string]: string } = {
   a: "O.....",
   b: "O.O...",
   c: "OO....",
