@@ -35,4 +35,12 @@ export function translateToEnglish(braille: string): any {
   let isNumber = false;
 
   const brailleChars = braille.match(/.{1,6}/g) || [];
+
+  for (const char of brailleChars) {
+    if (char === brailleMap[""]) {
+      englishText += "";
+      isCapital = false;
+      isNumber = false;
+    }
+  }
 }
