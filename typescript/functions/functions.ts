@@ -10,4 +10,5 @@ export interface translateToBrailleProps {
 
 export function translateToBraille(props: translateToBrailleProps): any {
   let brailleText = "";
+  let isNumber = false;
 }
