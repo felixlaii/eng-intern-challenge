@@ -26,4 +26,5 @@ export function translateToBraille(text: string): any {
       isNumber = false;
     }
   }
+  return brailleText;
 }
