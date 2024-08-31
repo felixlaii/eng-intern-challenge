@@ -38,7 +38,7 @@ export function translateToEnglish(braille: string): any {
 
   for (const char of brailleChars) {
     if (char === brailleMap[""]) {
-      englishText += "";
+      englishText += " ";
       isCapital = false;
       isNumber = false;
     } else if (char === brailleMap["cap"]) {
@@ -47,9 +47,16 @@ export function translateToEnglish(braille: string): any {
       isNumber = true;
     } else {
       let translatedChar = englishMap[char] || "";
-      if (isCapital) {
-        translatedChar = translatedChar.toUpperCase();
-        isCapital = false;
+
+      if (isNumber) {
+        if (translatedChar >= "a" && translatedChar <= "j") {
+          translatedChar = (
+            translatedChar.charCodeAt(0) -
+            "a".charCodeAt(0) +
+            "0".charCodeAt(0)
+          ).toString();
+        }
+        isNumber = false;
       }
       englishText += translatedChar;
     }
