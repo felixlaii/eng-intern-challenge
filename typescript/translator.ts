@@ -10,3 +10,17 @@ if (args.length < 2) {
 const [command, text] = args;
 
 let result: string;
+
+switch (command) {
+  case "translateTo":
+    result = translateToBraille(text);
+    break;
+  case "translateFrom":
+    result = translateToEnglish(text);
+    break;
+  default:
+    console.error('Invalid command. Use "translateTo" or "translateFrom".');
+    process.exit(1);
+}
+
+console.log(result);
