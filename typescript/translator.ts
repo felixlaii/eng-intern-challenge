@@ -9,7 +9,8 @@ if (args.length < 2) {
   process.exit(1);
 }
 
-const [command, text] = args;
+const [command, ...textArgs] = args;
+const text = textArgs.join(" ");
 
 let result: string;
 

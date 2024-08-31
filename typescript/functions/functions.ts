@@ -29,7 +29,7 @@ export function translateToBraille(text: string): any {
   return brailleText;
 }
 
-export function translateToEnglish(braille: string): any {
+export function translateToEnglish(braille: string): string {
   let englishText = "";
   let isCapital = false;
   let isNumber = false;
