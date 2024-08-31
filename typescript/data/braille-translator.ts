@@ -29,3 +29,5 @@ export const brailleMap: { [key: string]: string } = {
   num: ".O.OOO",
   " ": "......",
 };
+
+export const brailleNumbers: { [key: string]: string } = {};
