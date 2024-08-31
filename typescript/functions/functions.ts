@@ -11,6 +11,10 @@ export function translateToBraille(text: string): any {
   for (const char of text) {
     if (char === " ") {
       brailleText += brailleMap[" "];
+      isNumber = false;
+    } else if (char >= "A" && char <= "Z") {
+      brailleText += brailleMap["cap"] + brailleMap[char.toLowerCase()];
+      isNumber = false;
     }
   }
 }
