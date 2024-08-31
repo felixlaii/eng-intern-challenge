@@ -4,7 +4,7 @@ import {
   englishMap,
 } from "../data/braille-translator";
 
-export function translateToBraille(text: string): any {
+export function translateToBraille(text: string): string {
   let brailleText = "";
   let isNumber = false;
 
