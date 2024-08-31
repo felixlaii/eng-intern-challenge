@@ -45,6 +45,13 @@ export function translateToEnglish(braille: string): any {
       isCapital = true;
     } else if (char === brailleMap["num"]) {
       isNumber = true;
+    } else {
+      let translatedChar = englishMap[char] || "";
+      if (isCapital) {
+        translatedChar = translatedChar.toUpperCase();
+        isCapital = false;
+      }
+      englishText += translatedChar;
     }
   }
 }
