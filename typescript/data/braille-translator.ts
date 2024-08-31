@@ -1,4 +1,4 @@
-export const brailleMap: { [key: string]: any } = {
+export const brailleMap: { [key: string]: string } = {
   a: "O.....",
   b: "O.O...",
   c: "OO....",
@@ -28,16 +28,19 @@ export const brailleMap: { [key: string]: any } = {
   cap: ".....O",
   num: ".O.OOO",
   " ": "......",
-  0: ".OOO..",
-  1: "O.....",
-  2: "O.O...",
-  3: "OO....",
-  4: "OO.O..",
-  5: "O..O..",
-  6: "OOO...",
-  7: "OOOO..",
-  8: "O.OO..",
-  9: ".OO...",
+};
+
+export const brailleNumbers: { [key: string]: string } = {
+  "0": ".OOO..",
+  "1": "O.....",
+  "2": "O.O...",
+  "3": "OO....",
+  "4": "OO.O..",
+  "5": "O..O..",
+  "6": "OOO...",
+  "7": "OOOO..",
+  "8": "O.OO..",
+  "9": ".OO...",
 };
 
 export const englishMap = {
@@ -70,7 +73,7 @@ export const englishMap = {
     "O..OOO": "z",
     ".....O": "cap",
     "......": " ",
-  } as { [key: string]: string },
+  },
   numbers: {
     ".O.OOO": "num",
     "O.....": "1",
@@ -83,18 +86,5 @@ export const englishMap = {
     "O.OO..": "8",
     ".OO...": "9",
     ".OOO..": "0",
-  } as { [key: string]: string },
-};
-
-export const brailleNumbers: { [key: string]: string } = {
-  "0": ".OOO..",
-  "1": "O.....",
-  "2": "O.O...",
-  "3": "OO....",
-  "4": "OO.O..",
-  "5": "O..O..",
-  "6": "OOO...",
-  "7": "OOOO..",
-  "8": "O.OO..",
-  "9": ".OO...",
+  },
 };
